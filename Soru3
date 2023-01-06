@@ -1,0 +1,7 @@
+def sayi_çarpma(n):
+    if n==1:
+        return 1
+    if n<=0:
+        return "0'dan büyük olmalı"
+    else:
+        return n*sayi_çarpma(n-1)
