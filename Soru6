@@ -1,0 +1,97 @@
+#bayağı uğraştım bence öok saçma oldu ama çalışıyor
+import random
+b=8
+list=[]
+for i in range(0,8):
+    a=random.randint(1,99)
+    list.append(a)
+print(list)
+
+c=random.randint(1,99)
+print(c)
+
+list.sort()
+print(list)
+d=int(len(list)/2)
+
+for k in range(0,1):
+    if c==list[int((len(list)/2)+(0.5))-1]:        
+        print("c, listenin",int((b/2)+0.5),".","elemandır")
+        break
+    if c<list[int((len(list)/2)+(0.5))-1]:
+        d=int(len(list)/2)
+        list1=[]
+        list1=list[0:d]
+        #print(list1)
+        if c==list1[int((len(list1)/2)+(0.5))-1]:
+            print("c, listenin",int((b/4)+0.5),".","elemandır")
+            break
+        #print(list1)
+        if c<list1[int((len(list1)/2)+0.5)-1]:
+            d=int(len(list)/2)
+            list2=[]
+            list2=list[0:d-2]
+            
+            if c==list2[int((len(list2)/2)+(0.5))-1]:
+                print("c, listenin",int((b/8)+0.5),".","elemandır")
+                break
+            elif c==list2[int((len(list2)/2)+(0.5))]:
+                print("c, listenin",int((b/8)+0.5)+1,".","elemandır")
+                break
+            else:
+                print("bu sayı listede yok")
+                break
+
+        else: 
+            d=int(len(list)/2)
+            list5=[]
+            list5=list[d-2:d]
+            #print(list5)
+            if c==list5[int((len(list5)/2)+(0.5))-1]:          
+                print("c, listenin",int((b/8)+0.5),".","elemandır")
+                break
+            elif c==list5[int((len(list5)/2)+(0.5))]:
+                print("c, listenin",int((b/8)+0.5)+1,".","elemandır")
+                break
+            else:
+                print("bu sayı listede yok")
+                break
+                     
+    else:
+        d=int(len(list)/2)
+        list3=[]
+        list3=list[d:b]
+        #print(list3)
+        if c>list3[int((len(list3)/2)+0.55)-1]:
+            d=int(len(list3)/2)
+            list4=[]
+            list4=list[d+2:b]
+            
+            if c==list4[int((len(list4)/2)+(0.5))-1]:
+                print("c, listenin",int((b/8)+0.5),".","elemandır")
+                break
+            elif c==list4[int((len(list4)/2)+(0.5))]:
+                print("c, listenin",int((b/8)+0.5)+1,".","elemandır")
+                break
+            else:
+                print("bu sayı listede yok")
+                break
+
+        else: 
+            d=int(len(list)/2)
+            list6=[]
+            list6=list[d:d+2]
+            if c==list6[int((len(list6)/2)+(0.5))-1]:          
+                print("c, listenin",int((6*b/8)+0.5),".","elemandır")
+                break
+            elif c==list6[int((len(list6)/2)+(0.5))]:
+                print("c, listenin",int((6*b/8)+0.5)+1,".","elemandır")
+                break
+            else:
+                print("bu sayı listede yok")
+                break
+        
+    print("c sayısı bu listede yoktur")
+        
+
+
