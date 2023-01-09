@@ -1,0 +1,30 @@
+import random
+a=99
+while str(a)[0]==str(a)[1]:
+    a=random.randint(10,98)
+    while a%10==0:
+        a=random.randint(10,98)
+#print(a)
+puan=0
+for i in range(0,10):
+    if i>0:
+        print("---bi tane daha gir aslanım bok gibi tahmin---")
+    b=int(input("bir sayı giriniz"))
+   
+    if str(b)[0]==str(b)[1]:
+        print ("---Rakamları farklı olan bir sayı tutunuz---")
+        continue
+    if b%10==0:
+        print("---Tuttuğunu sayı 10'nun katı olmamalıdır çünkü onun yerini kimse tutamaz...")
+    else:
+        pass
+    if str(a)[0]==str(b)[0] and str(a)[1]==str(b)[1]:
+        print("-?-Tebriklerrr")
+        break
+    if str(a)[0]==str(b)[0] or str(a)[1]==str(b)[1]:
+        puan=puan+1
+        print("---Helal bi tane sayının yeri doğru\nPuanın:",puan)
+    if str(a)[1]==str(b)[0] or str(a)[0]==str(b)[1]:
+        puan=puan-1
+        print("---Doğru tahmin ama yanlış yer\nPuanın:",puan)
+    
