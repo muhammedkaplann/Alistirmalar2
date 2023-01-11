@@ -1,0 +1,33 @@
+import random 
+b=random.randint(1000,2300)    #Listemizin kaç elemanlı olacağını belirliyoruz
+list=[]
+for l in range(0,b):
+    a=random.randint(11,99)    #Listedeki sayıların hangi aralıkta olacağını ayarlıyoruz
+    list.append(a)
+
+c=random.randint(11,99)    #rastgele bir sayı seçiyoruz
+print("seçilen sayı:",c)
+sayac=int((b/2)+(0.5))    #Sayac bize sayının, litedeki kaçıncı eleman olduğunu verecek
+list.sort()
+print(list)
+list_kontrol=list    #Kontrol etmek amacıyla bir liste oluşturuyorum.
+
+for i in range(0,b-1):
+    try:
+        if c==list[int(len(list)/2+(0.5)-1)]:    #Eğer liste çift elemanlı ise sol tarafa yakın olan sayı ortadaki eleman olarak kabul edilecek
+                    print(c ,"sayısı listenin",sayac,".","elemandır")
+                    break
+    except: 
+        print(c ,"sayısı bu listede bulunmamaktadır.")
+        break
+        
+    if c<list[int((len(list)/2)+(0.5))-1]:
+        list=list[0:int(((len(list))/2)+0.5)]    #Eğer sayı, ortadaki sayıdan küçükse sol taraf bizim yeni listemiz olacak ve döngü devam edecek
+        sayac=sayac-int((len(list))/2)
+        if len(list)<=1:    #Listede tek eleman kalırsa range bitene kadar o sayıyı döndürüyor.Bunu önlemek için 1 eleman kalırsa break yapıyor
+            print(c ,"sayısı bu listede bulunmamaktadır.")
+            break
+    else:
+        list=list[int(((len(list))/2)+(0.5)):b-1]    #Eğer sayı, ortadaki sayıdan büyükse sağ taraf bizim yeni listemiz olacak ve döngü devam edecek
+        sayac=sayac+int(((len(list))/2)+0.5)
+
